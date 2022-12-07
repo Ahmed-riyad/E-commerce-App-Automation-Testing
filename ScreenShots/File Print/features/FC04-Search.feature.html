@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>FC04-Search.feature</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #bbb529;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #cc7832;}
+.s3 { color: #a9b7c6;}
+.s4 { color: #629755; font-style: italic;}
+.s5 { color: #297bde; font-weight: bold;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+FC04-Search.feature</font>
+</center></td></tr></table>
+<pre><span class="s0">@smoke</span>
+
+  <span class="s2">Feature</span><span class="s1">: </span><span class="s3">User can View Products &amp; Search</span>
+
+    <span class="s2">Background</span><span class="s1">: </span><span class="s3">Open Browser and Navigate to Page</span>
+      <span class="s2">Given </span><span class="s3">user go to login page</span>
+      <span class="s2">Then </span><span class="s3">user enter email &quot;testEmail@example.com&quot; and Password &quot;P@ssw0rd&quot;</span>
+      <span class="s2">When </span><span class="s3">user clicks on login button</span>
+
+      <span class="s4">#Scenario SC4</span>
+     <span class="s2">Scenario Outline</span><span class="s1">: </span><span class="s3">SC4- Logged User could search for any product</span>
+        <span class="s2">Given </span><span class="s3">user search for items in search box For &quot;</span><span class="s1">&lt;products&gt;</span><span class="s3">&quot;</span>
+       <span class="s2">Examples</span><span class="s1">:</span>
+       <span class="s2">|</span><span class="s5">products</span><span class="s2">|</span>
+       <span class="s2">|</span><span class="s5">Lenovo</span><span class="s2">|</span>
+       <span class="s2">|</span><span class="s5">Fahrenheit</span><span class="s2">|</span>
+       <span class="s2">|</span><span class="s5">Shoes    </span><span class="s2">|</span>
+
+
+
+
+
+
+</pre>
+</body>
+</html>

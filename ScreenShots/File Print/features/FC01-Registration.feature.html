@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>FC01-Registration.feature</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #a9b7c6;}
+.s1 { color: #bbb529;}
+.s2 { color: #cc7832;}
+.s3 { color: #a9b7c6;}
+.s4 { color: #629755; font-style: italic;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+FC01-Registration.feature</font>
+</center></td></tr></table>
+<pre>
+<span class="s1">@smoke</span>
+<span class="s1">@test1</span>
+
+<span class="s2">Feature</span><span class="s0">: </span><span class="s3">User Customer Registration</span>
+
+  <span class="s2">Background</span><span class="s0">: </span><span class="s3">Open Browser and Navigate to Page</span>
+
+  <span class="s4"># Scenario SC1</span>
+  <span class="s2">Scenario</span><span class="s0">: </span><span class="s3">SC1- User could register with valid data</span>
+    <span class="s2">Given </span><span class="s3">user go to register page</span>
+    <span class="s2">Then </span><span class="s3">user select gender type</span>
+    <span class="s2">And </span><span class="s3">user enter first name &quot;ExampleName&quot; and last name &quot;ExampleName2&quot;</span>
+    <span class="s2">Then </span><span class="s3">user enter date of birth</span>
+    <span class="s2">Then </span><span class="s3">user enter email &quot;testEmail@example.com&quot; field and company name and check options</span>
+    <span class="s2">And </span><span class="s3">user enter Password fields &quot;P@ssw0rd&quot; &quot;P@ssw0rd&quot;</span>
+    <span class="s2">Then </span><span class="s3">user clicks on register button</span>
+    <span class="s2">Then </span><span class="s3">success message is displayed in Screen</span>
+
+
+</pre>
+</body>
+</html>

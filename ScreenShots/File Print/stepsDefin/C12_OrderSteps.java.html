@@ -1,0 +1,99 @@
+<html>
+<head>
+<title>C12_OrderSteps.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+C12_OrderSteps.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">org.example.stepsDefin</span><span class="s0">;</span>
+
+
+<span class="s0">import </span><span class="s1">io.cucumber.java.en.And</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">io.cucumber.java.en.Then</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">io.cucumber.java.en.When</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">org.example.pages.PG06_MakeOrder</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">org.openqa.selenium.support.ui.Select</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">org.testng.Assert</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">org.testng.asserts.SoftAssert</span><span class="s0">;</span>
+
+
+<span class="s0">public class </span><span class="s1">C12_OrderSteps {</span>
+
+
+    <span class="s1">PG06_MakeOrder PG06 = </span><span class="s0">new </span><span class="s1">PG06_MakeOrder()</span><span class="s0">;</span>
+
+
+    <span class="s1">@Then(</span><span class="s2">&quot;user check Agree Box and press CheckOut&quot;</span><span class="s1">)</span>
+    <span class="s0">public void </span><span class="s1">userCheckAgreeBoxAndPressCheckOut() {</span>
+        <span class="s1">PG06.termsOf().click()</span><span class="s0">;</span>
+        <span class="s1">PG06.checkOut().click()</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s1">@Then(</span><span class="s2">&quot;user fill shipping form&quot;</span><span class="s1">)</span>
+    <span class="s0">public void </span><span class="s1">userFillShippingForm() </span><span class="s0">throws </span><span class="s1">InterruptedException {</span>
+
+        <span class="s1">Select select = </span><span class="s0">new </span><span class="s1">Select(PG06.country())</span><span class="s0">;</span>
+        <span class="s1">select.selectByVisibleText(</span><span class="s2">&quot;Egypt&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">select = </span><span class="s0">new </span><span class="s1">Select(PG06.countrySup())</span><span class="s0">;</span>
+        <span class="s1">select.selectByVisibleText(</span><span class="s2">&quot;Other&quot;</span><span class="s1">)</span><span class="s0">;</span>
+
+        <span class="s1">Thread.sleep(</span><span class="s3">1500</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">PG06.City().clear()</span><span class="s0">;</span>
+        <span class="s1">PG06.City().sendKeys(</span><span class="s2">&quot;City Example1&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">PG06.Adress().clear()</span><span class="s0">;</span>
+        <span class="s1">PG06.Adress().sendKeys(</span><span class="s2">&quot;Address Example1&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">PG06.ZipCode().clear()</span><span class="s0">;</span>
+        <span class="s1">PG06.ZipCode().sendKeys(</span><span class="s2">&quot;123451&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">PG06.phone().clear()</span><span class="s0">;</span>
+        <span class="s1">PG06.phone().sendKeys(</span><span class="s2">&quot;01234567891&quot;</span><span class="s1">)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@When(</span><span class="s2">&quot;User Check Out Order Successfully&quot;</span><span class="s1">)</span>
+    <span class="s0">public void </span><span class="s1">userCheckOutOrderSuccessfully() </span><span class="s0">throws </span><span class="s1">InterruptedException {</span>
+        <span class="s1">Thread.sleep(</span><span class="s3">2000</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">PG06.CheckoutBt().click()</span><span class="s0">;</span>
+        <span class="s1">Thread.sleep(</span><span class="s3">2000</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">PG06.CheckoutBt2().click()</span><span class="s0">;</span>
+        <span class="s1">Thread.sleep(</span><span class="s3">2000</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">PG06.CheckoutBt3().click()</span><span class="s0">;</span>
+        <span class="s1">Thread.sleep(</span><span class="s3">2000</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">PG06.CheckoutBt4().click()</span><span class="s0">;</span>
+        <span class="s1">Thread.sleep(</span><span class="s3">2000</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">PG06.CheckoutBt5().click()</span><span class="s0">;</span>
+
+        <span class="s1">Thread.sleep(</span><span class="s3">3000</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">SoftAssert order = </span><span class="s0">new </span><span class="s1">SoftAssert()</span><span class="s0">;</span>
+        <span class="s1">String expect = </span><span class="s2">&quot;Your order has been successfully processed!&quot;</span><span class="s0">;</span>
+        <span class="s1">String actual = PG06.txtDone().getText()</span><span class="s0">;</span>
+        <span class="s1">order.assertTrue(actual.contains(expect)</span><span class="s0">,</span><span class="s2">&quot;Right Page Shown&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">order.assertTrue(PG06.txtDone().isDisplayed())</span><span class="s0">;</span>
+        <span class="s1">order.assertEquals(Hooks.driver.getCurrentUrl()</span><span class="s0">,</span><span class="s2">&quot;https://demo.nopcommerce.com/checkout/completed&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s2">&quot;Your Result :&quot; </span><span class="s1">+ actual)</span><span class="s0">;</span>
+        <span class="s1">order.assertAll()</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@And(</span><span class="s2">&quot;user go to Shopping Cart page to buy&quot;</span><span class="s1">)</span>
+    <span class="s0">public void </span><span class="s1">userGoToShoppingCartPageToBuy() </span><span class="s0">throws </span><span class="s1">InterruptedException {</span>
+        <span class="s1">Thread.sleep(</span><span class="s3">3000</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">PG06.ShopingCartBtn().click()</span><span class="s0">;</span>
+        <span class="s1">Thread.sleep(</span><span class="s3">3000</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">double </span><span class="s1">x = </span><span class="s3">0</span><span class="s0">; </span><span class="s1">x &lt; PG06.product().size()</span><span class="s0">; </span><span class="s1">x++ )</span>
+        <span class="s1">{</span>
+            <span class="s1">String value = PG06.product().get((</span><span class="s0">int</span><span class="s1">) x).getText()</span><span class="s0">;</span>
+            <span class="s1">System.out.println(</span><span class="s2">&quot;List Items : &quot; </span><span class="s1">+value)</span><span class="s0">;</span>
+            <span class="s1">Assert.assertTrue(</span><span class="s0">true, </span><span class="s1">value)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

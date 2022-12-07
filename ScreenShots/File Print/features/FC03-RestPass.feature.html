@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>FC03-RestPass.feature</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #a9b7c6;}
+.s1 { color: #bbb529;}
+.s2 { color: #cc7832;}
+.s3 { color: #a9b7c6;}
+.s4 { color: #629755; font-style: italic;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+FC03-RestPass.feature</font>
+</center></td></tr></table>
+<pre>
+<span class="s1">@smoke</span>
+
+<span class="s2">Feature</span><span class="s0">: </span><span class="s3">User Could Rest Password</span>
+
+  <span class="s2">Background</span><span class="s0">: </span><span class="s3">Open Browser and Navigate to Page</span>
+
+
+  <span class="s4"># Scenario SC3</span>
+  <span class="s2">Scenario</span><span class="s0">: </span><span class="s3">SC3-  could reset his/her password successfully</span>
+    <span class="s2">Given </span><span class="s3">user go to login page</span>
+    <span class="s2">Then </span><span class="s3">user clicks on Forget password Link</span>
+    <span class="s2">Then </span><span class="s3">user enter email &quot;testEmail@example.com&quot;</span>
+    <span class="s2">When </span><span class="s3">user clicks on Recover button</span>
+    <span class="s2">Then </span><span class="s3">Success massage appears on screen</span>
+
+
+</pre>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>FC12-SuccessfulOrder.feature</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #bbb529;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #cc7832;}
+.s3 { color: #a9b7c6;}
+.s4 { color: #629755; font-style: italic;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+FC12-SuccessfulOrder.feature</font>
+</center></td></tr></table>
+<pre><span class="s0">@smoke</span>
+<span class="s0">@test1</span>
+
+  <span class="s2">Feature</span><span class="s1">: </span><span class="s3">Logged user could Create A Successful Order</span>
+
+    <span class="s2">Background</span><span class="s1">: </span><span class="s3">Open Browser and Navigate to Page</span>
+      <span class="s2">Given </span><span class="s3">user go to login page</span>
+      <span class="s2">Then </span><span class="s3">user enter email &quot;testEmail@example.com&quot; and Password &quot;P@ssw0rd&quot;</span>
+      <span class="s2">When </span><span class="s3">user clicks on login button</span>
+
+    <span class="s4">#Scenario SC12</span>
+    <span class="s2">Scenario</span><span class="s1">: </span><span class="s3">SC12- Logged user can Create successful Order</span>
+      <span class="s2">Given </span><span class="s3">user go to Electronics category</span>
+      <span class="s2">And </span><span class="s3">user select Cell phones Subcategory</span>
+      <span class="s2">Then </span><span class="s3">user select Mobile HTC One M-8</span>
+      <span class="s2">Then </span><span class="s3">user add mobiles to Quantity</span>
+      <span class="s2">Then </span><span class="s3">user add mobile to Shopping cart</span>
+      <span class="s2">Then </span><span class="s3">user select Apparel and go to sub category Shoes</span>
+      <span class="s2">Then </span><span class="s3">user select color red from CheckBox</span>
+      <span class="s2">Then </span><span class="s3">filter option view results</span>
+      <span class="s2">And </span><span class="s3">user add item to Shopping cart</span>
+      <span class="s2">And </span><span class="s3">user go to Shopping Cart page to buy</span>
+      <span class="s2">Then </span><span class="s3">user update Shopping cart Quantity</span>
+      <span class="s2">Then </span><span class="s3">user check Agree Box and press CheckOut</span>
+      <span class="s2">Then </span><span class="s3">user fill shipping form</span>
+      <span class="s2">When </span><span class="s3">User Check Out Order Successfully</span>
+
+
+
+</pre>
+</body>
+</html>

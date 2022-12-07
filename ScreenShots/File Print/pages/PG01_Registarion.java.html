@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>PG01_Registarion.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+PG01_Registarion.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">org.example.pages</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">org.example.stepsDefin.Hooks</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">org.openqa.selenium.By</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">org.openqa.selenium.WebElement</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">PG01_Registarion {</span>
+
+    <span class="s0">public </span><span class="s1">WebElement registerBtn()</span>
+    <span class="s1">{</span>
+        <span class="s0">return </span><span class="s1">Hooks.driver.findElement(By.className(</span><span class="s2">&quot;ico-register&quot;</span><span class="s1">))</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public </span><span class="s1">WebElement GenderType() {</span><span class="s0">return </span><span class="s1">Hooks.driver.findElement(By.id(</span><span class="s2">&quot;gender-male&quot;</span><span class="s1">))</span><span class="s0">;</span><span class="s1">}</span>
+
+    <span class="s0">public </span><span class="s1">WebElement fName()</span>
+    <span class="s1">{</span>
+        <span class="s0">return  </span><span class="s1">Hooks.driver.findElement(By.id(</span><span class="s2">&quot;FirstName&quot;</span><span class="s1">))</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public </span><span class="s1">WebElement lName()</span>
+    <span class="s1">{</span>
+        <span class="s0">return  </span><span class="s1">Hooks.driver.findElement(By.id(</span><span class="s2">&quot;LastName&quot;</span><span class="s1">))</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public </span><span class="s1">WebElement day()</span>
+    <span class="s1">{</span>
+        <span class="s0">return </span><span class="s1">Hooks.driver.findElement(By.name(</span><span class="s2">&quot;DateOfBirthDay&quot;</span><span class="s1">))</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public </span><span class="s1">WebElement month()</span>
+    <span class="s1">{</span>
+        <span class="s0">return </span><span class="s1">Hooks.driver.findElement(By.name(</span><span class="s2">&quot;DateOfBirthMonth&quot;</span><span class="s1">))</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public </span><span class="s1">WebElement year()</span>
+    <span class="s1">{</span>
+        <span class="s0">return </span><span class="s1">Hooks.driver.findElement(By.name(</span><span class="s2">&quot;DateOfBirthYear&quot;</span><span class="s1">))</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+
+    <span class="s0">public </span><span class="s1">WebElement email()</span>
+    <span class="s1">{</span>
+        <span class="s0">return  </span><span class="s1">Hooks.driver.findElement(By.id(</span><span class="s2">&quot;Email&quot;</span><span class="s1">))</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s0">public </span><span class="s1">WebElement company() {</span><span class="s0">return </span><span class="s1">Hooks.driver.findElement(By.id(</span><span class="s2">&quot;Company&quot;</span><span class="s1">))</span><span class="s0">;</span><span class="s1">}</span>
+    <span class="s0">public </span><span class="s1">WebElement newsletter(){</span><span class="s0">return </span><span class="s1">Hooks.driver.findElement(By.id(</span><span class="s2">&quot;Newsletter&quot;</span><span class="s1">))</span><span class="s0">;</span><span class="s1">}</span>
+
+    <span class="s0">public </span><span class="s1">WebElement passwordtxt()</span>
+    <span class="s1">{</span>
+        <span class="s0">return  </span><span class="s1">Hooks.driver.findElement(By.id(</span><span class="s2">&quot;Password&quot;</span><span class="s1">))</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public </span><span class="s1">WebElement confirmpassTxt()</span>
+    <span class="s1">{</span>
+        <span class="s0">return  </span><span class="s1">Hooks.driver.findElement(By.id(</span><span class="s2">&quot;ConfirmPassword&quot;</span><span class="s1">))</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s0">public </span><span class="s1">WebElement creatBtn() {</span><span class="s0">return </span><span class="s1">Hooks.driver.findElement(By.id(</span><span class="s2">&quot;register-button&quot;</span><span class="s1">))</span><span class="s0">;</span><span class="s1">}</span>
+    <span class="s0">public </span><span class="s1">WebElement result()</span>
+    <span class="s1">{</span>
+        <span class="s0">return  </span><span class="s1">Hooks.driver.findElement(By.cssSelector(</span><span class="s2">&quot;div[class=</span><span class="s0">\&quot;</span><span class="s2">result</span><span class="s0">\&quot;</span><span class="s2">]&quot;</span><span class="s1">))</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s0">public </span><span class="s1">WebElement pagebody(){</span><span class="s0">return </span><span class="s1">Hooks.driver.findElement(By.className(</span><span class="s2">&quot;page-body&quot;</span><span class="s1">))</span><span class="s0">;</span><span class="s1">}</span>
+    <span class="s0">public </span><span class="s1">WebElement txtcolor(){</span><span class="s0">return </span><span class="s1">Hooks.driver.findElement(By.className(</span><span class="s2">&quot;result&quot;</span><span class="s1">))</span><span class="s0">;</span><span class="s1">}</span>
+
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

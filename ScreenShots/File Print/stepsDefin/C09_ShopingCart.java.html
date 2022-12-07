@@ -1,0 +1,147 @@
+<html>
+<head>
+<title>C09_ShopingCart.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #6897bb;}
+.s4 { color: #808080;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+C09_ShopingCart.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">org.example.stepsDefin</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">io.cucumber.java.en.And</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">io.cucumber.java.en.Then</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">org.example.pages.PG03_HomePage</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">org.example.pages.PG04_ShoppingCart</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">org.example.pages.PG05_Wish_CompareList</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">org.openqa.selenium.By</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">org.openqa.selenium.support.ui.Select</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">org.testng.Assert</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">org.testng.asserts.SoftAssert</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">C09_ShopingCart {</span>
+
+    <span class="s1">PG04_ShoppingCart PG04 = </span><span class="s0">new </span><span class="s1">PG04_ShoppingCart()</span><span class="s0">;</span>
+
+    <span class="s1">@And(</span><span class="s2">&quot;user add item to Shopping cart&quot;</span><span class="s1">)</span>
+    <span class="s0">public void </span><span class="s1">addItemsToShop() </span><span class="s0">throws </span><span class="s1">InterruptedException {</span>
+        <span class="s1">Thread.sleep(</span><span class="s3">2000</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">PG04.shoesAdd().click()</span><span class="s0">;</span>
+        <span class="s1">Select select = </span><span class="s0">new </span><span class="s1">Select(PG04.size())</span><span class="s0">;</span>
+        <span class="s1">select.selectByVisibleText(</span><span class="s2">&quot;9&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">PG04.slectColor().click()</span><span class="s0">;</span>
+        <span class="s1">PG04.addCart().click()</span><span class="s0">;</span>
+        <span class="s1">Thread.sleep(</span><span class="s3">3000</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">SoftAssert buy = </span><span class="s0">new </span><span class="s1">SoftAssert()</span><span class="s0">;</span>
+        <span class="s1">String expect = </span><span class="s2">&quot;The product has been added to your &quot;</span><span class="s0">;</span>
+        <span class="s1">String actual = PG04.sucssText().getText()</span><span class="s0">;</span>
+        <span class="s1">buy.assertTrue(actual.contains(expect))</span><span class="s0">;</span>
+        <span class="s1">buy.assertTrue(PG04.sucssText().isDisplayed())</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s2">&quot;Your Result :&quot; </span><span class="s1">+ actual)</span><span class="s0">;</span>
+        <span class="s1">buy.assertAll()</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Then(</span><span class="s2">&quot;user go to Electronics category&quot;</span><span class="s1">)</span>
+    <span class="s0">public void </span><span class="s1">userGoToElectronicsCategory() {</span>
+        <span class="s1">PG04.electronics().click()</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@And(</span><span class="s2">&quot;user select Cell phones Subcategory&quot;</span><span class="s1">)</span>
+    <span class="s0">public void </span><span class="s1">userSelectCellPhonesSubcategory() {</span>
+        <span class="s1">PG04.SubElctro().click()</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Then(</span><span class="s2">&quot;user select Mobile HTC One M-8&quot;</span><span class="s1">)</span>
+    <span class="s0">public void </span><span class="s1">userSelectMobileHTCOneM()  {</span>
+        <span class="s1">PG04.HTC_M8().click()</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Then(</span><span class="s2">&quot;user add mobiles to Quantity&quot;</span><span class="s1">)</span>
+    <span class="s0">public void </span><span class="s1">userAddMobilesToQuantity() </span><span class="s0">throws </span><span class="s1">InterruptedException {</span>
+        <span class="s1">PG04.HTCadd().clear()</span><span class="s0">;</span>
+        <span class="s1">PG04.HTCadd().sendKeys(</span><span class="s2">&quot;1&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Thread.sleep(</span><span class="s3">2000</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">double </span><span class="s1">x = </span><span class="s3">0</span><span class="s0">; </span><span class="s1">x &lt; PG04.pricesValu().size()</span><span class="s0">; </span><span class="s1">x++ )</span>
+        <span class="s1">{</span>
+            <span class="s1">String value = PG04.pricesValu().get((</span><span class="s0">int</span><span class="s1">) x).getText()</span><span class="s0">;</span>
+            <span class="s1">System.out.println(</span><span class="s2">&quot; Item Price : &quot;</span><span class="s1">+value)</span><span class="s0">;</span>
+            <span class="s1">Assert.assertTrue(</span><span class="s0">true, </span><span class="s1">value)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+    <span class="s1">@Then(</span><span class="s2">&quot;user add mobile to Shopping cart&quot;</span><span class="s1">)</span>
+    <span class="s0">public void </span><span class="s1">userAddMobileToShoppingCart() </span><span class="s0">throws </span><span class="s1">InterruptedException {</span>
+
+        <span class="s1">PG04.HTCcart().click()</span><span class="s0">;</span>
+        <span class="s1">Thread.sleep(</span><span class="s3">3000</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">SoftAssert mobbuy = </span><span class="s0">new </span><span class="s1">SoftAssert()</span><span class="s0">;</span>
+        <span class="s1">String expect = </span><span class="s2">&quot;The product has been added to your &quot;</span><span class="s0">;</span>
+        <span class="s1">String actual = PG04.sucssText().getText()</span><span class="s0">;</span>
+        <span class="s1">mobbuy.assertTrue(actual.contains(expect))</span><span class="s0">;</span>
+        <span class="s1">mobbuy.assertTrue(PG04.sucssText().isDisplayed())</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s2">&quot;Your Result :&quot; </span><span class="s1">+ actual)</span><span class="s0">;</span>
+        <span class="s1">mobbuy.assertAll()</span><span class="s0">;</span>
+        <span class="s1">Thread.sleep(</span><span class="s3">1500</span><span class="s1">)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s1">@And(</span><span class="s2">&quot;user go to Shopping Cart page&quot;</span><span class="s1">)</span>
+    <span class="s0">public void </span><span class="s1">userGoToShoppingCartPage() </span><span class="s0">throws </span><span class="s1">InterruptedException {</span>
+        <span class="s1">Thread.sleep(</span><span class="s3">3000</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">PG04.ShopingCartBtn().click()</span><span class="s0">;</span>
+
+        <span class="s4">//product</span>
+    <span class="s1">}</span>
+    <span class="s1">@Then(</span><span class="s2">&quot;user update Shopping cart Quantity&quot;</span><span class="s1">)</span>
+    <span class="s0">public void </span><span class="s1">userUpdateShoppingCartQuantity() </span><span class="s0">throws </span><span class="s1">InterruptedException {</span>
+       <span class="s1">Thread.sleep(</span><span class="s3">2000</span><span class="s1">)</span><span class="s0">;</span>
+
+        <span class="s1">PG04.quant1().clear()</span><span class="s0">;</span>
+        <span class="s1">PG04.quant1().sendKeys(</span><span class="s2">&quot;1&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">PG04.quant2().clear()</span><span class="s0">;</span>
+        <span class="s1">PG04.quant2().sendKeys(</span><span class="s2">&quot;2&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">PG04.udatCart().click()</span><span class="s0">;</span>
+        <span class="s1">Thread.sleep(</span><span class="s3">2000</span><span class="s1">)</span><span class="s0">;</span>
+
+    <span class="s1">}</span>
+
+    <span class="s1">@And(</span><span class="s2">&quot;user remove one of items from cart&quot;</span><span class="s1">)</span>
+    <span class="s0">public void </span><span class="s1">userRemoveOneOfItmesFromCart() </span><span class="s0">throws </span><span class="s1">InterruptedException {</span>
+        <span class="s1">PG04.removeItem().click()</span><span class="s0">;</span>
+        <span class="s1">Thread.sleep(</span><span class="s3">1500</span><span class="s1">)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Then(</span><span class="s2">&quot;user select size and color&quot;</span><span class="s1">)</span>
+    <span class="s0">public void </span><span class="s1">userSelectSizeAndColor() </span><span class="s0">throws </span><span class="s1">InterruptedException {</span>
+        <span class="s1">Thread.sleep(</span><span class="s3">2000</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">PG04.shoesAdd().click()</span><span class="s0">;</span>
+        <span class="s1">Select select = </span><span class="s0">new </span><span class="s1">Select(PG04.size())</span><span class="s0">;</span>
+        <span class="s1">select.selectByVisibleText(</span><span class="s2">&quot;9&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">PG04.slectColor().click()</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Then(</span><span class="s2">&quot;user select Mobile HTC One Mini Blue&quot;</span><span class="s1">)</span>
+    <span class="s0">public void </span><span class="s1">userSelectMobileHTCOneMiniBlue() </span><span class="s0">throws </span><span class="s1">InterruptedException {</span>
+
+        <span class="s1">PG04.HTCblue().click()</span><span class="s0">;</span>
+        <span class="s1">PG04.ComparBtn().click()</span><span class="s0">;</span>
+        <span class="s1">Thread.sleep(</span><span class="s3">3000</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">SoftAssert buy = </span><span class="s0">new </span><span class="s1">SoftAssert()</span><span class="s0">;</span>
+        <span class="s1">String expect = </span><span class="s2">&quot;The product has been added to your &quot;</span><span class="s0">;</span>
+        <span class="s1">String actual = PG04.sucssText().getText()</span><span class="s0">;</span>
+        <span class="s1">buy.assertTrue(actual.contains(expect))</span><span class="s0">;</span>
+        <span class="s1">buy.assertTrue(PG04.sucssText().isDisplayed())</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s2">&quot;Your Result :&quot; </span><span class="s1">+ actual)</span><span class="s0">;</span>
+        <span class="s1">buy.assertAll()</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

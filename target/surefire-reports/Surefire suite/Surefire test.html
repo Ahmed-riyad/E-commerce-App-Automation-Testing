@@ -1,0 +1,154 @@
+<html>
+<head>
+<title>TestNG:  Surefire test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Surefire test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>15/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Wed Dec 07 15:14:02 EET 2022</td>
+</tr>
+<tr><td>Total time:</td><td>602 seconds (602762 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='org.example.testRunner.runners.runScenario()'><b>runScenario</b><br>Test class: org.example.testRunner.runners<br>Test method: Runs Cucumber Scenarios<br>Parameters: "SC6- Logged user could select different Categories", "User could Select different Categories"</td>
+<td></td>
+<td>44</td>
+<td>org.example.testRunner.runners@42f93a98</td></tr>
+<tr>
+<td title='org.example.testRunner.runners.runScenario()'><b>runScenario</b><br>Test class: org.example.testRunner.runners<br>Test method: Runs Cucumber Scenarios<br>Parameters: "SC9- Logged user could add different products to Shopping cart", "Logged user could (Add Product/s, Update Quantity, Remove Product)"</td>
+<td></td>
+<td>38</td>
+<td>org.example.testRunner.runners@42f93a98</td></tr>
+<tr>
+<td title='org.example.testRunner.runners.runScenario()'><b>runScenario</b><br>Test class: org.example.testRunner.runners<br>Test method: Runs Cucumber Scenarios<br>Parameters: "SC4- Logged User could search for any product", "User can View Products & Search"</td>
+<td></td>
+<td>18</td>
+<td>org.example.testRunner.runners@42f93a98</td></tr>
+<tr>
+<td title='org.example.testRunner.runners.runScenario()'><b>runScenario</b><br>Test class: org.example.testRunner.runners<br>Test method: Runs Cucumber Scenarios<br>Parameters: "SC4- Logged User could search for any product", "User can View Products & Search"</td>
+<td></td>
+<td>22</td>
+<td>org.example.testRunner.runners@42f93a98</td></tr>
+<tr>
+<td title='org.example.testRunner.runners.runScenario()'><b>runScenario</b><br>Test class: org.example.testRunner.runners<br>Test method: Runs Cucumber Scenarios<br>Parameters: "SC3-  could reset his/her password successfully", "User Could Rest Password"</td>
+<td></td>
+<td>17</td>
+<td>org.example.testRunner.runners@42f93a98</td></tr>
+<tr>
+<td title='org.example.testRunner.runners.runScenario()'><b>runScenario</b><br>Test class: org.example.testRunner.runners<br>Test method: Runs Cucumber Scenarios<br>Parameters: "SC5- Logged User could switch between currencies US-Euro", "User can Change Products Currencies"</td>
+<td></td>
+<td>27</td>
+<td>org.example.testRunner.runners@42f93a98</td></tr>
+<tr>
+<td title='org.example.testRunner.runners.runScenario()'><b>runScenario</b><br>Test class: org.example.testRunner.runners<br>Test method: Runs Cucumber Scenarios<br>Parameters: "SC10- Logged user could add different products to Wishlist", "Logged user could add different products to Wishlist"</td>
+<td></td>
+<td>72</td>
+<td>org.example.testRunner.runners@42f93a98</td></tr>
+<tr>
+<td title='org.example.testRunner.runners.runScenario()'><b>runScenario</b><br>Test class: org.example.testRunner.runners<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User could log in with valid email and password", "User Customer Can Login to Page"</td>
+<td></td>
+<td>19</td>
+<td>org.example.testRunner.runners@42f93a98</td></tr>
+<tr>
+<td title='org.example.testRunner.runners.runScenario()'><b>runScenario</b><br>Test class: org.example.testRunner.runners<br>Test method: Runs Cucumber Scenarios<br>Parameters: "SC8- Logged user could select different tags", "Logged user could Select different Tags"</td>
+<td></td>
+<td>31</td>
+<td>org.example.testRunner.runners@42f93a98</td></tr>
+<tr>
+<td title='org.example.testRunner.runners.runScenario()'><b>runScenario</b><br>Test class: org.example.testRunner.runners<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Logged user could Update Quantity, Remove Product", "Logged user could (Add Product/s, Update Quantity, Remove Product)"</td>
+<td></td>
+<td>57</td>
+<td>org.example.testRunner.runners@42f93a98</td></tr>
+<tr>
+<td title='org.example.testRunner.runners.runScenario()'><b>runScenario</b><br>Test class: org.example.testRunner.runners<br>Test method: Runs Cucumber Scenarios<br>Parameters: "SC1- User could register with valid data", "User Customer Registration"</td>
+<td></td>
+<td>25</td>
+<td>org.example.testRunner.runners@42f93a98</td></tr>
+<tr>
+<td title='org.example.testRunner.runners.runScenario()'><b>runScenario</b><br>Test class: org.example.testRunner.runners<br>Test method: Runs Cucumber Scenarios<br>Parameters: "SC11- Logged user could add different products to compare list", "Logged user could add different products to Compare list"</td>
+<td></td>
+<td>38</td>
+<td>org.example.testRunner.runners@42f93a98</td></tr>
+<tr>
+<td title='org.example.testRunner.runners.runScenario()'><b>runScenario</b><br>Test class: org.example.testRunner.runners<br>Test method: Runs Cucumber Scenarios<br>Parameters: "SC4- Logged User could search for any product", "User can View Products & Search"</td>
+<td></td>
+<td>96</td>
+<td>org.example.testRunner.runners@42f93a98</td></tr>
+<tr>
+<td title='org.example.testRunner.runners.runScenario()'><b>runScenario</b><br>Test class: org.example.testRunner.runners<br>Test method: Runs Cucumber Scenarios<br>Parameters: "SC7- Logged user could filter with color", "User could Filter with Color"</td>
+<td></td>
+<td>20</td>
+<td>org.example.testRunner.runners@42f93a98</td></tr>
+<tr>
+<td title='org.example.testRunner.runners.runScenario()'><b>runScenario</b><br>Test class: org.example.testRunner.runners<br>Test method: Runs Cucumber Scenarios<br>Parameters: "SC12- Logged user can Create successful Order", "Logged user could Create A Successful Order"</td>
+<td></td>
+<td>70</td>
+<td>org.example.testRunner.runners@42f93a98</td></tr>
+</table><p>
+</body>
+</html>

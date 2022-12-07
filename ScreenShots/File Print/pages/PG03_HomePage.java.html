@@ -1,0 +1,86 @@
+<html>
+<head>
+<title>PG03_HomePage.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+PG03_HomePage.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">org.example.pages</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">org.example.stepsDefin.Hooks</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">org.openqa.selenium.By</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">org.openqa.selenium.WebElement</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">java.util.List</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">PG03_HomePage {</span>
+
+    <span class="s0">public </span><span class="s1">List&lt;WebElement&gt; prices()</span>
+    <span class="s1">{</span>
+        <span class="s1">List&lt;WebElement&gt; prices = Hooks.driver.findElements(By.cssSelector(</span><span class="s2">&quot;span[class=</span><span class="s0">\&quot;</span><span class="s2">price actual-price</span><span class="s0">\&quot;</span><span class="s2">]&quot;</span><span class="s1">))</span><span class="s0">;</span>
+        <span class="s0">return </span><span class="s1">prices</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s0">public </span><span class="s1">List&lt;WebElement&gt; pricesbox()</span>
+    <span class="s1">{</span>
+        <span class="s1">List&lt;WebElement&gt; prices = Hooks.driver.findElements(By.className(</span><span class="s2">&quot;prices&quot;</span><span class="s1">))</span><span class="s0">;</span>
+        <span class="s0">return </span><span class="s1">prices</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s0">public </span><span class="s1">List&lt;WebElement&gt; pricesValu()</span>
+    <span class="s1">{</span>
+        <span class="s1">List&lt;WebElement&gt; prices = Hooks.driver.findElements(By.className(</span><span class="s2">&quot;product-price&quot;</span><span class="s1">))</span><span class="s0">;</span>
+        <span class="s0">return </span><span class="s1">prices</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+<span class="s0">public </span><span class="s1">List&lt;WebElement&gt; productlist()</span>
+<span class="s1">{</span>
+    <span class="s1">List&lt;WebElement&gt; Plist = Hooks.driver.findElements(By.className(</span><span class="s2">&quot;product-title&quot;</span><span class="s1">))</span><span class="s0">;</span>
+    <span class="s0">return </span><span class="s1">Plist</span><span class="s0">;</span>
+<span class="s1">}</span>
+    <span class="s0">public </span><span class="s1">WebElement computers() {</span>
+        <span class="s0">return </span><span class="s1">Hooks.driver.findElement(By.cssSelector(</span><span class="s2">&quot;a[href=</span><span class="s0">\&quot;</span><span class="s2">/computers</span><span class="s0">\&quot;</span><span class="s2">]&quot;</span><span class="s1">))</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s0">public </span><span class="s1">WebElement apparel() {</span>
+        <span class="s0">return </span><span class="s1">Hooks.driver.findElement(By.cssSelector(</span><span class="s2">&quot;a[href=</span><span class="s0">\&quot;</span><span class="s2">/apparel</span><span class="s0">\&quot;</span><span class="s2">]&quot;</span><span class="s1">))</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s0">public </span><span class="s1">WebElement electronics() {</span>
+        <span class="s0">return </span><span class="s1">Hooks.driver.findElement(By.cssSelector(</span><span class="s2">&quot;a[href=</span><span class="s0">\&quot;</span><span class="s2">/electronics</span><span class="s0">\&quot;</span><span class="s2">]&quot;</span><span class="s1">))</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s0">public </span><span class="s1">WebElement SubCategoury () {</span>
+        <span class="s0">return </span><span class="s1">Hooks.driver.findElement(By.cssSelector(</span><span class="s2">&quot;h2 a[href=</span><span class="s0">\&quot;</span><span class="s2">/software</span><span class="s0">\&quot;</span><span class="s2">&quot;</span><span class="s1">))</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s0">public </span><span class="s1">WebElement win8(){</span>
+        <span class="s0">return </span><span class="s1">Hooks.driver.findElement(By.cssSelector(</span><span class="s2">&quot;h2 a[href=</span><span class="s0">\&quot;</span><span class="s2">/windows-8-pro</span><span class="s0">\&quot;</span><span class="s2">]&quot;</span><span class="s1">))</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s0">public </span><span class="s1">List&lt;WebElement&gt; TextItem()</span>
+    <span class="s1">{</span>
+        <span class="s1">List&lt;WebElement&gt; TextList = Hooks.driver.findElements(By.className(</span><span class="s2">&quot;product-title&quot;</span><span class="s1">))</span><span class="s0">;</span>
+        <span class="s0">return </span><span class="s1">TextList</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s0">public </span><span class="s1">WebElement shoes(){</span>
+        <span class="s0">return </span><span class="s1">Hooks.driver.findElement(By.cssSelector(</span><span class="s2">&quot;h2 a[href=</span><span class="s0">\&quot;</span><span class="s2">/shoes</span><span class="s0">\&quot;</span><span class="s2">]&quot;</span><span class="s1">))</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s0">public </span><span class="s1">WebElement redcolor() {</span>
+        <span class="s0">return </span><span class="s1">Hooks.driver.findElement(By.id(</span><span class="s2">&quot;attribute-option-15&quot;</span><span class="s1">))</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s0">public </span><span class="s1">WebElement tag1() { </span><span class="s0">return </span><span class="s1">Hooks.driver.findElement(By.cssSelector(</span><span class="s2">&quot;a[href=</span><span class="s0">\&quot;</span><span class="s2">/awesome</span><span class="s0">\&quot;</span><span class="s2">]&quot;</span><span class="s1">))</span><span class="s0">;</span><span class="s1">}</span>
+    <span class="s0">public </span><span class="s1">WebElement tag2() { </span><span class="s0">return </span><span class="s1">Hooks.driver.findElement(By.cssSelector(</span><span class="s2">&quot;a[href=</span><span class="s0">\&quot;</span><span class="s2">/cool</span><span class="s0">\&quot;</span><span class="s2">]&quot;</span><span class="s1">))</span><span class="s0">;</span><span class="s1">}</span>
+    <span class="s0">public </span><span class="s1">WebElement falshText () {</span>
+        <span class="s0">return </span><span class="s1">Hooks.driver.findElement(By.className(</span><span class="s2">&quot;page-title&quot;</span><span class="s1">))</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s0">public </span><span class="s1">WebElement searchBox() {</span>
+        <span class="s0">return </span><span class="s1">Hooks.driver.findElement(By.id(</span><span class="s2">&quot;small-searchterms&quot;</span><span class="s1">))</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

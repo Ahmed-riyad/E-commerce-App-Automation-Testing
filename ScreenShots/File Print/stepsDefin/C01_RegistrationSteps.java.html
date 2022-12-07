@@ -1,0 +1,104 @@
+<html>
+<head>
+<title>C01_RegistrationSteps.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+C01_RegistrationSteps.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">org.example.stepsDefin</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">io.cucumber.java.en.And</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">io.cucumber.java.en.Given</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">io.cucumber.java.en.Then</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">org.example.pages.PG01_Registarion</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">org.openqa.selenium.support.ui.Select</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">org.testng.asserts.SoftAssert</span><span class="s0">;</span>
+
+
+<span class="s0">public class </span><span class="s1">C01_RegistrationSteps {</span>
+
+    <span class="s1">PG01_Registarion PG01 = </span><span class="s0">new </span><span class="s1">PG01_Registarion()</span><span class="s0">;</span>
+
+    <span class="s1">@Given(</span><span class="s2">&quot;user go to register page&quot;</span><span class="s1">)</span>
+    <span class="s0">public void </span><span class="s1">registerPage() </span><span class="s0">throws </span><span class="s1">InterruptedException {</span>
+
+        <span class="s1">PG01.registerBtn().click()</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s2">&quot;Register page open successfully&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Thread.sleep(</span><span class="s3">3000</span><span class="s1">)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+
+    <span class="s1">@Then(</span><span class="s2">&quot;user select gender type&quot;</span><span class="s1">)</span>
+    <span class="s0">public void </span><span class="s1">userSelectGenderType() {</span>
+
+        <span class="s1">PG01.GenderType().click()</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@And(</span><span class="s2">&quot;user enter first name {string} and last name {string}&quot;</span><span class="s1">)</span>
+    <span class="s0">public void </span><span class="s1">userEnterFirstNameAndLastName(String arg0</span><span class="s0">, </span><span class="s1">String arg1) {</span>
+        <span class="s1">PG01.fName().sendKeys(arg0)</span><span class="s0">;</span>
+        <span class="s1">PG01.lName().sendKeys(arg1)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Then(</span><span class="s2">&quot;user enter date of birth&quot;</span><span class="s1">)</span>
+    <span class="s0">public void </span><span class="s1">userEnterDateOfBirth() </span><span class="s0">throws </span><span class="s1">InterruptedException {</span>
+
+        <span class="s1">Select select = </span><span class="s0">new </span><span class="s1">Select(PG01.day())</span><span class="s0">;</span>
+        <span class="s1">select.selectByIndex(</span><span class="s3">6</span><span class="s1">)</span><span class="s0">;</span>
+
+        <span class="s1">select = </span><span class="s0">new </span><span class="s1">Select(PG01.month())</span><span class="s0">;</span>
+        <span class="s1">select.selectByVisibleText(</span><span class="s2">&quot;April&quot;</span><span class="s1">)</span><span class="s0">;</span>
+
+        <span class="s1">select = </span><span class="s0">new </span><span class="s1">Select(PG01.year())</span><span class="s0">;</span>
+        <span class="s1">select.selectByVisibleText(</span><span class="s2">&quot;1985&quot;</span><span class="s1">)</span><span class="s0">;</span>
+
+        <span class="s1">Thread.sleep(</span><span class="s3">1500</span><span class="s1">)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Then(</span><span class="s2">&quot;user enter email {string} field and company name and check options&quot;</span><span class="s1">)</span>
+    <span class="s0">public void </span><span class="s1">userEnterEmailField(String arg0) {</span>
+        <span class="s1">PG01.email().sendKeys(arg0)</span><span class="s0">;</span>
+        <span class="s1">PG01.company().sendKeys(</span><span class="s2">&quot;New Register&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">PG01.newsletter().click()</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@And(</span><span class="s2">&quot;user enter Password fields {string} {string}&quot;</span><span class="s1">)</span>
+    <span class="s0">public void </span><span class="s1">userEnterPassword(String arg0</span><span class="s0">, </span><span class="s1">String arg1) {</span>
+        <span class="s1">PG01.passwordtxt().sendKeys(arg0)</span><span class="s0">;</span>
+        <span class="s1">PG01.confirmpassTxt().sendKeys(arg1)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Then(</span><span class="s2">&quot;user clicks on register button&quot;</span><span class="s1">)</span>
+    <span class="s0">public void </span><span class="s1">userClicksBut() {</span>
+        <span class="s1">PG01.creatBtn().submit()</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Then(</span><span class="s2">&quot;success message is displayed in Screen&quot;</span><span class="s1">)</span>
+    <span class="s0">public void </span><span class="s1">successMsgIsShown() </span><span class="s0">throws </span><span class="s1">InterruptedException {</span>
+
+        <span class="s1">String expectedResult = </span><span class="s2">&quot;Your registration completed&quot;</span><span class="s0">;</span>
+        <span class="s1">String actualResult = PG01.pagebody().getText()</span><span class="s0">;</span>
+        <span class="s1">String textColor = PG01.txtcolor().getCssValue(</span><span class="s2">&quot;color&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">SoftAssert soft = </span><span class="s0">new </span><span class="s1">SoftAssert()</span><span class="s0">;</span>
+        <span class="s1">soft.assertTrue(actualResult.contains(expectedResult))</span><span class="s0">;</span>
+        <span class="s1">soft.assertTrue(PG01.result().isDisplayed()</span><span class="s0">, </span><span class="s2">&quot;Register Successfully&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">soft.assertEquals(Hooks.driver.getCurrentUrl()</span><span class="s0">, </span><span class="s2">&quot;https://demo.nopcommerce.com/registerresult/1?returnUrl=/&quot;</span><span class="s0">, </span><span class="s2">&quot;Page Is Right&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s2">&quot;Your Actual Result is :&quot; </span><span class="s1">+ actualResult)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(textColor)</span><span class="s0">;</span>
+        <span class="s1">Thread.sleep(</span><span class="s3">3000</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">soft.assertAll()</span><span class="s0">;</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

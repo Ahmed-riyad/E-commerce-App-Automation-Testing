@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>C02_LoginSteps.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+C02_LoginSteps.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">org.example.stepsDefin</span><span class="s0">;</span>
+
+
+<span class="s0">import </span><span class="s1">io.cucumber.java.en.Given</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">io.cucumber.java.en.Then</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">io.cucumber.java.en.When</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">org.example.pages.PG02_LoginAndRest</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">org.testng.asserts.SoftAssert</span><span class="s0">;</span>
+
+
+
+<span class="s0">public class </span><span class="s1">C02_LoginSteps {</span>
+
+    <span class="s1">PG02_LoginAndRest PG02 = </span><span class="s0">new </span><span class="s1">PG02_LoginAndRest()</span><span class="s0">;</span>
+
+
+    <span class="s1">@Given(</span><span class="s2">&quot;user go to login page&quot;</span><span class="s1">)</span>
+    <span class="s0">public void </span><span class="s1">loginPage() </span><span class="s0">throws </span><span class="s1">InterruptedException {</span>
+        <span class="s1">PG02.loginBtn().click()</span><span class="s0">;</span>
+        <span class="s1">Thread.sleep(</span><span class="s3">3000</span><span class="s1">)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Then(</span><span class="s2">&quot;user enter email {string} and Password {string}&quot;</span><span class="s1">)</span>
+    <span class="s0">public void </span><span class="s1">userEnterEmailAndPassword(String arg0</span><span class="s0">, </span><span class="s1">String arg1) {</span>
+        <span class="s1">PG02.email().sendKeys(arg0)</span><span class="s0">;</span>
+        <span class="s1">PG02.password().sendKeys(arg1)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@When(</span><span class="s2">&quot;user clicks on login button&quot;</span><span class="s1">)</span>
+    <span class="s0">public void </span><span class="s1">userClicksOnLoginButton() {</span>
+        <span class="s1">PG02.password().submit()</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s1">@Then(</span><span class="s2">&quot;Screen Navigate to home page&quot;</span><span class="s1">)</span>
+    <span class="s0">public void </span><span class="s1">screenNavigateToHomePage() </span><span class="s0">throws </span><span class="s1">InterruptedException {</span>
+        <span class="s1">Thread.sleep(</span><span class="s3">3000</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">SoftAssert link = </span><span class="s0">new </span><span class="s1">SoftAssert()</span><span class="s0">;</span>
+        <span class="s1">link.assertEquals(Hooks.driver.getCurrentUrl()</span><span class="s0">,</span><span class="s2">&quot;https://demo.nopcommerce.com/&quot;</span><span class="s0">, </span><span class="s2">&quot;Login page Successfully &quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">link.assertTrue(PG02.pageUrl().isDisplayed()</span><span class="s0">, </span><span class="s2">&quot;Account is Logged In&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">link.assertAll()</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+
+<span class="s1">}</span>
+</pre>
+</body>
+</html>
